@@ -1,0 +1,21 @@
+Eye.config do
+  logger "/var/log/eye.log"
+end
+
+Eye.application("<%= app %>") do
+
+  <%- engine.each_process do |name, process| -%>
+    <%- 1.upto(engine.formation[name]) do |num| -%>
+      <%- port = engine.port_for(process, num) -%>
+      process "<%= "#{name}-#{num}" %>" do
+        env(<%= engine.env.merge("PORT" =>  port).inspect %>)
+        working_dir "<%= engine.root %>"
+        pid_file "tmp/pids/<%= name %>_<%= num %>.pid"
+        stdall "<%= log %>/<%= app %>-<%= name %>-<%= num %>.log"
+        start_command "<%= process.command %>"
+        daemonize true
+      end
+
+    <%- end -%>
+  <%- end -%>
+end
