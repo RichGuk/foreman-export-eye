@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.version       = "0.0.1"
   spec.authors       = ["Rich Grundy"]
   spec.email         = ["rich@stinkyink.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Export Foreman Procfile to Eye config}
+  spec.description   = %q{Exports Foreman Procfile format to Eye config format}
+  spec.homepage      = "https://github.com/RichGuk/foreman-export-eye"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -18,5 +18,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rake", "~> 10"
 end
