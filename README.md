@@ -1,6 +1,6 @@
 # Foreman::Export::Eye
 
-TODO: Write a gem description
+Export foreman config to eye (https://github.com/kostya/eye).
 
 ## Installation
 
@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+We have the following export command in capistrano:
+
+```ruby
+bundle exec foreman export eye #{eye_path} -a #{application} -t #{latest_release}/config -l #{shared_path}/log -u #{user} -e #{latest_release}/app_env
+```
 
 ## Contributing
 
